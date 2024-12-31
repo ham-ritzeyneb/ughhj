@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donnez-nous votre avis</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Donnez-nous votre avis !</h1>
+            <form id="feedback-form">
+                <div class="field">
+                    <label class="label">Qu'avez-vous pensé de notre service ?</label>
+                    <div class="control">
+                        <textarea class="textarea" name="comment" placeholder="Votre commentaire ici..."></textarea>
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="control">
+                        <button class="button is-primary" type="submit">Envoyer mon avis</button>
+                    </div>
+                </div>
+            </form>
+            <div id="thank-you-message" class="notification is-success is-hidden">
+                Merci pour votre avis, à bientôt !
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const form = document.getElementById('feedback-form');
+        const thankYouMessage = document.getElementById('thank-you-message');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+            thankYouMessage.classList.remove('is-hidden'); // Affiche le message de remerciement
+        });
+    </script>
+    <style>
+        .is-hidden {
+            display: none;
+        }
+    </style>
+     <!-- Pied de page -->
+     <footer class="footer">
+        <div class="content has-text-centered">
+            <p>&copy; 2024 Restaurant Gourmet - Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
